@@ -1,0 +1,9 @@
+.ui.menu {
+    min-height: 51px;
+    color: white;
+}
+
+.ui.massive.inverted.menu {
+    background-color: rgba(214,55,55,0.9);
+    padding: 20px 10rem;
+}
