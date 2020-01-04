@@ -14,6 +14,7 @@ const Services = () => {
 					computer={5}
 					tablet={5}
 					mobile={16}
+					style={{ marginBottom: "3rem" }}
 				>
 					<Icon
 						circular
@@ -49,6 +50,7 @@ const Services = () => {
 					computer={5}
 					tablet={5}
 					mobile={16}
+					style={{ marginBottom: "3rem" }}
 				>
 					<Icon
 						circular
@@ -86,6 +88,7 @@ const Services = () => {
 					computer={5}
 					tablet={5}
 					mobile={16}
+					style={{ marginBottom: "3rem" }}
 				>
 					<Icon
 						circular

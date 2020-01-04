@@ -10,14 +10,12 @@ import {
 } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import Services from "../components/Services";
+import { HeaderTitle } from "../components/HeaderTitle";
 
 function About() {
 	return (
 		<div>
-			<Header as="h1" textAlign="center">
-				ABOUT RUNDE & PARTNERS, INC.
-				<hr className="underline" />
-			</Header>
+			<HeaderTitle title={"ABOUT RUNDE & PARTNERS, INC."}/>
 			<Container>
 				<Segment raised>
 					<Grid>

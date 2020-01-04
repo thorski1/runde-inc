@@ -27,6 +27,14 @@
     color: grey;
 }
 
+.email-links {
+    color: red;
+}
+
+.email-links:hover {
+    color: grey;
+}
+
 .hero {
     height: 100vh;
     background: url(/images/building1.jpg) no-repeat center center fixed;
@@ -52,8 +60,12 @@
 
 .about-divs {
     padding: 3rem 7rem;
-    background-color: rgba(0, 0, 0, 0.4)
-
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
 }
 
 .pointer {

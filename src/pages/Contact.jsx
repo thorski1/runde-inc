@@ -1,15 +1,12 @@
 import React from "react";
-import { Grid, Header, Segment } from "semantic-ui-react";
-import "./Contact.css";
+import { Grid, Header, Segment, Divider } from "semantic-ui-react";
+import { HeaderTitle } from "../components/HeaderTitle";
+import { ContactInfo } from "../components/ContactInfo";
 
 function Contact() {
 	return (
 		<div>
-			<Header as="h1" textAlign="center">
-				CONTACT US
-				<hr className="underline" />
-			</Header>
-
+			<HeaderTitle title={"CONTACT US"} />
 			<Grid centered columns={2}>
 				<Grid.Column>
 					<Header
@@ -27,40 +24,11 @@ function Contact() {
 						</Header>{" "}
 					</Segment>
 					<Segment attached color="red">
-						<Grid centered columns={2}>
+						<Grid centered columns={1}>
 							<Grid.Column>
-								<Segment attached raised>
-									<Header textAlign="center" as="h2">
-										Tim Runde
-									</Header>
-									<Header textAlign="center" as="h3">
-										(415) 265-9914
-									</Header>
-									<Header textAlign="center" as="h3">
-										<a
-											className="email-links"
-											href="mailto:tim@runde-inc.com"
-										>
-											tim@runde-inc.com
-										</a>
-									</Header>
-								</Segment>
-								<Segment attached>
-									<Header textAlign="center" as="h2">
-										Stacey Thoyre
-									</Header>
-									<Header textAlign="center" as="h3">
-										(415) 420-3033
-									</Header>
-									<Header textAlign="center" as="h3">
-										<a
-											className="email-links"
-											href="mailto:stacey@runde-inc.com"
-										>
-											stacey@runde-inc.com
-										</a>
-									</Header>
-								</Segment>
+								<ContactInfo name={"Tim Runde"} phoneNumber={"(415) 265-9914"} emailName={"tim"} />
+								<Divider />
+								<ContactInfo name={"Stacey Thoyre"} phoneNumber={"(415) 420-3033"} emailName={"stacey"} />
 							</Grid.Column>
 						</Grid>
 					</Segment>

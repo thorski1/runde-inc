@@ -3,10 +3,12 @@ import {
 	Grid,
 	Header,
 	Button,
-	Container,
-	Image
+	Container
 } from "semantic-ui-react";
 import Services from "../components/Services";
+import { Link } from "react-router-dom";
+import { HeaderTitle } from "../components/HeaderTitle";
+import { NewsArticle } from "../components/NewsArticle";
 
 function Home() {
 	return (
@@ -22,11 +24,7 @@ function Home() {
 						</div>
 					</Grid.Column>
 				</Grid.Row>
-
-				<Header as="h1" textAlign="center">
-					OUR SERVICES
-					<hr className="underline" />
-				</Header>
+				<HeaderTitle title={"OUR SERVICES"} />
 				<Services />
 				<Grid.Row>
 					<Grid.Column>
@@ -46,15 +44,21 @@ function Home() {
 									>
 										<Container>
 											<div className="about-divs">
-												<Header textAlign="center" as="h2">
+												<Header
+													textAlign="center"
+													as="h2"
+													style={{ color: "white" }}
+												>
 													Who we are
 												</Header>
-												<Button
-													basic
-													color="red"
-													size="huge"
-													content="ABOUT US"
-												/>
+												<Link to="/about">
+													<Button
+														basic
+														color="red"
+														size="huge"
+														content="ABOUT US"
+													/>
+												</Link>
 											</div>
 										</Container>
 									</Grid.Column>
@@ -65,15 +69,21 @@ function Home() {
 									>
 										<Container>
 											<div className="about-divs">
-												<Header textAlign="center" as="h2">
+												<Header
+													style={{ color: "white" }}
+													textAlign="center"
+													as="h2"
+												>
 													What we do
 												</Header>
-												<Button
-													basic
-													color="red"
-													size="huge"
-													content="OUR WORK"
-												/>
+												<Link to="/portfolio">
+													<Button
+														basic
+														color="red"
+														size="huge"
+														content="OUR WORK"
+													/>
+												</Link>
 											</div>
 										</Container>
 									</Grid.Column>
@@ -83,96 +93,67 @@ function Home() {
 					</Grid.Column>
 				</Grid.Row>
 				<Container>
-					<Header as="h1" textAlign="center">
-						LATEST NEWS
-						<hr className="underline" />
-					</Header>
+					<HeaderTitle title="LATEST NEWS" />
 					<Grid>
 						<Grid.Row centered columns={2}>
-							<Grid.Column
-								mobile={16}
-								tablet={8}
-								computer={8}
+							<NewsArticle
+								parameter="upcoming"
+								image="/images/building1.jpg"
+								title="Upcoming Events"
 							>
-								<Image src="/images/building1.jpg" />
-								<Header
-									textAlign="center"
-									as="h2"
-									color="red"
-								>
-									Upcoming Events
+								<Header as="h3" textAlign="center">
+									Upcoming Events - January 31st, 2019 San
+									Diego, CA
 								</Header>
-								<Header textAlign="center" as="h3">
-									JANUARY 31, 2019 - San Diego, CA
-								</Header>
-								<Header textAlign="center" as="h3">
+								<Header as="h3" textAlign="center">
 									TEACHING: "Introduction to Green
 									Buildings"
 								</Header>
-							</Grid.Column>
-							<Grid.Column
-								mobile={16}
-								tablet={8}
-								computer={8}
-							>
-								<Image src="/images/building1.jpg" />
 								<Header
+									as="h3"
+									className="bottom-padding"
 									textAlign="center"
-									as="h2"
-									color="red"
 								>
-									Runde Receives Outstanding Service Award
+									February 11-12, 2019 Tampa, FL
 								</Header>
-								<Header textAlign="center" as="h3">
+							</NewsArticle>
+							<NewsArticle
+								parameter="outstanding"
+								image="/images/building1.jpg"
+								title="Runde Receives Outstanding Service Award"
+							>
+								<Header as="h3">
 									Timothy P. Runde, MAI, LEED AP of San
 									Francisco, was named the recipient of the
 									Outstanding Service Award during the...
 								</Header>
-							</Grid.Column>
+							</NewsArticle>
 						</Grid.Row>
 						<Grid.Row centered columns={2}>
-							<Grid.Column
-								mobile={16}
-								tablet={8}
-								computer={8}
+							<NewsArticle
+								parameter="green-book"
+								image="/images/building1.jpg"
+								title="NEW! Green valuation book released"
 							>
-								<Image src="/images/building1.jpg" />
-								<Header
-									textAlign="center"
-									as="h2"
-									color="red"
-								>
-									NEW! Green Valuation Book Released
-								</Header>
-								<Header textAlign="center" as="h3">
+								<Header as="h3">
 									The much anticipated Appraisal Institute
 									textbook The Valuation of Green Commercial
 									Real Estate, co-authored by Runde &
-									Partners Timothy P. Runde...
+									Partners principals Timothy P. Runde...
 								</Header>
-							</Grid.Column>
-							<Grid.Column
-								mobile={16}
-								tablet={8}
-								computer={8}
+							</NewsArticle>
+							<NewsArticle
+								parameter="well-building"
+								image="/images/building1.jpg"
+								title="Runde & Partners becomes first appraisal firm with WELL Building Standard & Fitwel expertise"
 							>
-								<Image src="/images/building1.jpg" />
-								<Header
-									textAlign="center"
-									as="h2"
-									color="red"
-								>
-									Runde & Partners becomes first appraisal
-									firm with WELL Building Standard & Fitwel
-									expertise
-								</Header>
-								<Header textAlign="center" as="h3">
+								<Header as="h3">
 									Runde & Partners, Inc. is pleased to
 									congratulate Stacey L. Thoyre for
 									attaining the WELL AP credential. This
 									credential denotes...
 								</Header>
-							</Grid.Column>
+							</NewsArticle>
 						</Grid.Row>
 					</Grid>
 				</Container>
