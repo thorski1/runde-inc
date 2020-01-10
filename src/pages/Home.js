@@ -1,14 +1,11 @@
 import React from "react";
-import {
-	Grid,
-	Header,
-	Button,
-	Container
-} from "semantic-ui-react";
+import { Grid, Header, Container, Button } from "semantic-ui-react";
 import Services from "../components/Services";
-import { Link } from "react-router-dom";
 import { HeaderTitle } from "../components/HeaderTitle";
 import { NewsArticle } from "../components/NewsArticle";
+import { ImageButtonContainer } from "../components/ImageButtonContainer";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 function Home() {
 	return (
@@ -16,12 +13,120 @@ function Home() {
 			<Grid centered>
 				<Grid.Row centered columns={1}>
 					<Grid.Column>
-						<div className="hero">
-							<h1 className="main-title">
-								Runde & Partners, Inc.
-								<hr className="underline" />
-							</h1>
-						</div>
+						{/* <div className="hero">
+								<h1 className="main-title" style={{textAlign: "center"}}>
+									Runde & Partners, Inc.
+									<hr className="underline" />
+								</h1>
+						</div> */}
+						<Carousel
+							autoPlay={true}
+							showThumbs={false}
+							infiniteLoop={true}
+							interval={5000}
+							showStatus={false}
+							stopOnHover={false}
+						>
+							<div className="hero">
+								<img
+									src="images/goldengatebridge.JPG"
+									alt="building"
+								/>
+								<Container>
+									<h1 className="main-title">
+										Runde & Partners, Inc.
+										<hr className="underline" />
+									</h1>
+									<h2 className="subtitle">
+										Real Estate Valuation and Consulting
+									</h2>
+									<Button
+										className="button-title"
+										size="huge"
+										color="red"
+										content="OUR SERVICES"
+									/>
+								</Container>
+							</div>
+							<div className="hero">
+								<img
+									src="images/oldcar.jpg"
+									alt="building"
+								/>
+								<h1 className="main-title">
+									Expertise
+									<hr className="underline" />
+								</h1>
+								<h2 className="subtitle">
+									Valuation | Litigation | Tax Appeal |
+									Green Building
+								</h2>
+								<Button
+									className="button-title"
+									size="huge"
+									color="red"
+									content="OUR SERVICES"
+								/>
+							</div>
+							<div className="hero">
+								<img
+									src="images/oldtime.jpg"
+									alt="building"
+								/>
+								<h1 className="main-title">
+									Market Knowledge
+									<hr className="underline" />
+								</h1>
+								<h2 className="subtitle">
+									Knowing More Than Just Data Points
+								</h2>
+								<Button
+									className="button-title"
+									size="huge"
+									color="red"
+									content="OUR SERVICES"
+								/>
+							</div>
+							<div className="hero">
+								<img
+									src="images/butterfly.jpg"
+									alt="building"
+								/>
+								<h1 className="main-title">
+									Focused Solutions
+									<hr className="underline" />
+								</h1>
+								<h2 className="subtitle">
+									Tailored to Your Needs
+								</h2>
+								<Button
+									className="button-title"
+									size="huge"
+									color="red"
+									content="OUR SERVICES"
+								/>
+							</div>
+							<div className="hero">
+								<img
+									src="images/hilltower.jpg"
+									alt="building"
+								/>
+								<h1 className="main-title">
+									Experience
+									<hr className="underline" />
+								</h1>
+								<h2 className="subtitle">
+									Depth of Knowledge | Breadth of
+									Understanding
+								</h2>
+								<Button
+									className="button-title"
+									size="huge"
+									color="red"
+									content="OUR SERVICES"
+								/>
+							</div>
+						</Carousel>
 					</Grid.Column>
 				</Grid.Row>
 				<HeaderTitle title={"OUR SERVICES"} />
@@ -37,56 +142,14 @@ function Home() {
 									</h1>
 								</Grid.Row>
 								<Grid.Row centered columns={2}>
-									<Grid.Column
-										mobile={16}
-										tablet={8}
-										computer={8}
-									>
-										<Container>
-											<div className="about-divs">
-												<Header
-													textAlign="center"
-													as="h2"
-													style={{ color: "white" }}
-												>
-													Who we are
-												</Header>
-												<Link to="/about">
-													<Button
-														basic
-														color="red"
-														size="huge"
-														content="ABOUT US"
-													/>
-												</Link>
-											</div>
-										</Container>
-									</Grid.Column>
-									<Grid.Column
-										mobile={16}
-										tablet={8}
-										computer={8}
-									>
-										<Container>
-											<div className="about-divs">
-												<Header
-													style={{ color: "white" }}
-													textAlign="center"
-													as="h2"
-												>
-													What we do
-												</Header>
-												<Link to="/portfolio">
-													<Button
-														basic
-														color="red"
-														size="huge"
-														content="OUR WORK"
-													/>
-												</Link>
-											</div>
-										</Container>
-									</Grid.Column>
+									<ImageButtonContainer
+										title="Who we are"
+										buttonContent="ABOUT US"
+									/>
+									<ImageButtonContainer
+										title="What we do"
+										buttonContent="OUR WORK"
+									/>
 								</Grid.Row>
 							</Grid>
 						</div>

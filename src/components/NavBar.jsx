@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./NavBar.css";
-import { Menu } from "semantic-ui-react";
+import { Menu, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 export default function NavBar() {
@@ -12,12 +12,16 @@ export default function NavBar() {
 	return (
 		<Menu
 			stackable
-			pointing
 			inverted
 			secondary
 			size="massive"
-			style={{marginBottom: "-2rem"}}
+			style={{ marginBottom: "-2rem" }}
 		>
+			<Menu.Item>
+				<Link to="/">
+					<Image size="small" src="images/logo.png" style={{margin: "-2rem 0"}} />
+				</Link>
+			</Menu.Item>
 			<Menu.Item
 				position="right"
 				name="Home"
